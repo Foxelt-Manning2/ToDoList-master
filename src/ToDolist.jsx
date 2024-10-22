@@ -96,7 +96,7 @@ function padZero(number){
     const updatedTask = prompt('Edit task', tasks[index])
 
     setTasks(preTasks =>
-      preTasks.map((task, i) => (i === index ? updatedTask : task))
+      preTasks.map((task, i) => (i === index ? updatedTask : task.task))
     )
   }
 
