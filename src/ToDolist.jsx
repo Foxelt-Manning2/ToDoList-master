@@ -93,11 +93,13 @@ function padZero(number){
 
 // Enables the edit button operability
   function updateTask (index) {
-    const updatedTask = prompt('Edit task', tasks[index])
+    const currentTask =tasks[index]
+    const updatedTask = prompt('Edit task',currentTask.task)|| currentTask.task
 
     setTasks(preTasks =>
-      preTasks.map((task, i) => (i === index ? updatedTask : task.task))
-    )
+      preTasks.map((task, i) => i === index 
+      ?{...task, task:updatedTask}:task
+    ))
   }
 
 
