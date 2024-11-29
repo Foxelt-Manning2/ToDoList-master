@@ -150,8 +150,10 @@ function padZero(number){
           style={{ transform: 'translate(-50,-50)' }}
           id='NewTaskArea'
         >
-          <div className='text-7xl m-36 text-blue-600'> To Do list</div>
-          <div className='bg-yellow-500 border-2 border-sky-300 my-4  m-3 hover:select-none rounded-xl'>
+          <div className='text-7xl my-8 text-blue-600'> To Do list</div>
+          <div className='hover:select-none rounded-xl'>
+            <div className="inputarea">
+
            {/* input button  */}
           <input 
           placeholder='Enter title description'
@@ -167,8 +169,7 @@ function padZero(number){
             placeholder='Enter task'
             value={newTasks}
             onChange={handleInput}
-            id='newTask'
-            className='border-4 border-solid border-black w-3/4 '
+            className='border-2 border-solid border-blue-500 w-3/4  rounded-lg'
           /><br/>
 
            <select 
@@ -189,23 +190,24 @@ function padZero(number){
             value={dateTime}/><br/>
           {/* Create task button */}
           <button
-            className='mx-3 my-6 border-1 border-white rounded-lg border-solid bg-red-600'
+            className='mx-3 my-6 border-1 border-white rounded-lg border-solid btn-task'
             onClick={createTask}
             >
             {' '}
-           ➕  Add Task  .
+           ➕  Add Task 
           </button>
             </div>
+            </div>
           {/* task list */}
-          <div className='my-10'>
+          <div className='my-10 list'>
             <ul>
             {tasks.map((task, index) => (
               <li key={index}
-                className=' break-words whitespace-normal border-2 border-sky-300 my-4 bg-amber-600 m-3 hover:select-none rounded-xl flex flex-col'
+                className=' break-words whitespace-normal border-2 border-sky-300 my-4 hover:select-none rounded-xl flex flex-col listspace'
               >
                 <section  className='my-3 relative  '>
                   <h1
-                  className='text-3xl bg-gray-700'>
+                  className='text-3xl slash'>
                     {task.description}
                   <p className='float-right mx-0'   >{task.priority}</p><br/>
                   </h1>
@@ -219,26 +221,26 @@ function padZero(number){
              
                 <div >
                   <button
-                    className='deleteBtn border-2 border-solid my-10 mx-3 bg-purple-900 hover:bg-purple-500 hover:select-none'
+                    className='deleteBtn border-2 border-solid my-1 mx-3 btn-color hover:select-none'
                     onClick={() => deleteTask(index)}
                   >
                     🗑️
                   </button>
                   <button
-                    className='complete my-10 mx-3.5 border-2 border-solid bg-yellow-500 hover:bg-yellow-600 hover:select-none'
+                    className='complete my-1 mx-3.5 border-2 border-solid btn-color hover:select-none'
                     onClick={() => completedTask(index,task)}
                   >
                     ✔️
                   </button>
                   <button
-                    className='updated my-10 mx-3.5 border-2 border-solid bg-blue-700 hover:bg-blue-400 hover:select-none'
+                    className='updated my-1 mx-3.5 border-2 border-solid btn-color hover:select-none'
                     id='up'
                     onClick={() => updateTask(index)}
                   >
                     ✏️
                   </button>
                 </div>
-                <p  className='float-right relative border-2 border-white border-solid '>Due By  {timeDisplay(task.Duetime)} </p>
+                <p  className='float-right relative border-2 slash border-solid '>Due By  {timeDisplay(task.Duetime)} </p>
               </li>
             ))}
               </ul>
@@ -286,7 +288,7 @@ function padZero(number){
       )}
 
       {/* Dashboard */}
-      <aside className=' top-0 left-0 fixed w-3/12 bg-green-800 h-screen rounded-lg'>
+      <aside className=' top-0 left-0 fixed w-1/6 bg-green-800 h-screen rounded-lg'>
         <div className=' font-mono font-bold text-4xl bg-green-600  break-words whitespace-normal '>
           Dashboard
         </div>

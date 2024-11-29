@@ -1,9 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body{
-    background-image:linear-gradient(
-        135deg,#0e081c,#716f71  );
-        margin: 0px;
-    background-size: cover;
+    background-color: #fbfbfb;
+}
+
+.inputarea{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: hsl(62, 59%, 75%);
+    border-radius:1rem ;
+}
+.inputarea input,textarea,select{
+    background-color:   hsl(197, 75%, 69%);
+    color: hsl(62, 59%, 75%);
+}
+textarea::placeholder,input::placeholder{
+    color:hsl(62, 59%, 75%);
+}
+.listspace{
+    background-color: hsl(62, 59%, 75%);
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+.list{
+    width: 95%;
+}
+
+.btn-color{
+    background-color: hsl(197, 75%, 69%);
+    border-radius: 3px;
+    border: none;
+    padding: 2px;
+}
+
+.btn-task{
+    background-color: aqua;
+    padding-right: 0.5rem;
+}
+
+.slash{
+    background-color: hsl(197, 75%, 69%);
+    border-radius: 4px;
 }
